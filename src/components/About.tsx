@@ -1,4 +1,3 @@
-import React from 'react';
 import { MapPin, Mail, Briefcase, GraduationCap } from 'lucide-react';
 import Profilepic from '../assets/profile-pic.png';
 

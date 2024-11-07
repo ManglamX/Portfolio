@@ -1,5 +1,4 @@
-import React from 'react';
-import { Award, Calendar, ExternalLink } from 'lucide-react';
+import { Calendar, ExternalLink } from 'lucide-react';
 
 interface Certificate {
   title: string;

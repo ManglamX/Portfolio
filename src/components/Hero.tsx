@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowDown, Code, Cpu, Palette } from 'lucide-react';
 
 export default function Hero() {

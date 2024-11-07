@@ -1,5 +1,4 @@
-import React from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { Github } from 'lucide-react';
 
 import ee1999 from '../assets/ee1999.png';
 
