@@ -1,14 +1,8 @@
 import React from 'react';
-import {  
-  Cpu, 
-  Palette, 
+import {   
   GitBranch, 
   Terminal, 
   Laptop, 
-  Users,
-  MessageSquare,
-  LineChart,
-  Briefcase,
   Target,
   UserPlus,
   UsersRound
