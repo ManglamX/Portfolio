@@ -1,6 +1,8 @@
 import React from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 
+import ee1999 from '../assets/ee1999.png';
+
 const projects = [
   {
     title: 'EETARA Cafe',
@@ -21,7 +23,14 @@ const projects = [
     description: 'Innovative 3D hologram display using mist for unique visual experiences.',
     image: 'https://images.unsplash.com/photo-1633412802994-5c058f151b66?auto=format&fit=crop&q=80&w=800',
     tech: ['IoT', 'Arduino', 'Hardware Design'],
-    githubUrl: 'https://github.com/ManglamX',
+    githubUrl: '', // Added empty string as a placeholder
+  },
+  {
+    title: 'Electronics Engineering 1999 Batch Website',
+    description: 'A dynamic website for the Electronics Engineering batch of 1999 alumni of Fr. Conceicao Rodrigues College of Engineering, featuring profiles, search functionality, and upcoming event details',
+    image: ee1999, // Corrected this line
+    tech: ['Firebase', 'AI/ML', 'HTML', 'CSS', 'JavaScript', 'React'],
+    githubUrl: 'https://github.com/ManglamX/EE_Batch1999',
   },
 ];
 
@@ -55,15 +64,17 @@ export default function Projects() {
                   ))}
                 </div>
                 <div className="flex space-x-4">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
-                  >
-                    <Github size={16} className="mr-1" />
-                    View Code
-                  </a>
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                    >
+                      <Github size={16} className="mr-1" />
+                      View Code
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

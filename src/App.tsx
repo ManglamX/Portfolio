@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Certificates from './components/Certificates';
 import Contact from './components/Contact';
 
 function App() {
@@ -16,13 +17,14 @@ function App() {
         <About />
         <Skills />
         <Projects />
+        <Certificates />
         <Contact />
       </main>
-      {/* <footer className="bg-gray-50 dark:bg-dark-100 py-6">
+      <footer className="bg-gray-50 dark:bg-dark-100 py-6">
         <div className="container mx-auto px-6 text-center">
           <p className="text-gray-600 dark:text-gray-400">© {new Date().getFullYear()} Manglam Jaiswal. All rights reserved.</p>
         </div>
-      </footer> */}
+      </footer>
     </div>
   );
 }

@@ -1,10 +1,14 @@
 import React from 'react';
-import { Menu, X, Github, Linkedin, Mail, Sun, Moon } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Sun, Moon, FileDown } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 export default function Header() {
   const [isOpen, setIsOpen] = React.useState(false);
   const { isDark, toggleTheme } = useTheme();
+
+  const handleDownloadResume = () => {
+    window.open('https://drive.google.com/file/d/16pOB1m3_WniqwbqWFHz0TCiWuzwbkdiE/view?usp=sharing', '_blank');
+  };
 
   return (
     <header className="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 shadow-sm">
@@ -57,6 +61,13 @@ export default function Header() {
             >
               <Mail className="w-5 h-5" />
             </a>
+            <button
+              onClick={handleDownloadResume}
+              className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors"
+            >
+              <FileDown className="w-4 h-4" />
+              Resume
+            </button>
           </div>
 
           <div className="md:hidden flex items-center space-x-4">
@@ -92,6 +103,16 @@ export default function Header() {
               <a href="#skills" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" onClick={() => setIsOpen(false)}>Skills</a>
               <a href="#projects" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" onClick={() => setIsOpen(false)}>Projects</a>
               <a href="#contact" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" onClick={() => setIsOpen(false)}>Contact</a>
+              <button
+                onClick={() => {
+                  handleDownloadResume();
+                  setIsOpen(false);
+                }}
+                className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors"
+              >
+                <FileDown className="w-4 h-4" />
+                Resume
+              </button>
             </div>
           </div>
         )}
