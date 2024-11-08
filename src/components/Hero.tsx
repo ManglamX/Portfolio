@@ -1,6 +1,9 @@
 import { ArrowDown, Code, Cpu, Palette } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Hero() {
+  const { isDark } = useTheme();
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative">
       <div className="container mx-auto px-6 py-24 text-center relative z-20">
@@ -8,21 +11,21 @@ export default function Hero() {
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 gradient-text animate-fade-in relative z-20 leading-tight py-2" style={{ paddingBottom: '0.4em' }}>
             Manglam Jaiswal
           </h1>
-          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto mb-12 animate-fade-in-delay-2 relative z-20">
+          <p className={`text-base sm:text-lg max-w-2xl mx-auto mb-12 animate-fade-in-delay-2 relative z-20 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
             I'm a second-year Electronics and Computer Science student skilled in HTML, CSS, JavaScript, Java, C/C++, and basic Flutter, Dart, and Arduino. Passionate about AI, ML, IoT, and full-stack development, I'm eager to tackle real-world challenges through creative, collaborative projects.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in-delay-2 relative z-20">
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
-              <Code className="w-5 h-5 text-blue-400" />
-              <span className="text-sm sm:text-base text-gray-200">Web Development</span>
+            <div className={`flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md border ${isDark ? 'bg-white/10 border-white/20' : 'bg-gray-100 border-gray-200'}`}>
+              <Code className="w-5 h-5 text-blue-500" />
+              <span className={`text-sm sm:text-base ${isDark ? 'text-gray-200' : 'text-gray-700'}`}>Web Development</span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
-              <Cpu className="w-5 h-5 text-blue-400" />
-              <span className="text-sm sm:text-base text-gray-200">IoT & Arduino</span>
+            <div className={`flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md border ${isDark ? 'bg-white/10 border-white/20' : 'bg-gray-100 border-gray-200'}`}>
+              <Cpu className="w-5 h-5 text-blue-500" />
+              <span className={`text-sm sm:text-base ${isDark ? 'text-gray-200' : 'text-gray-700'}`}>IoT & Arduino</span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
-              <Palette className="w-5 h-5 text-blue-400" />
-              <span className="text-sm sm:text-base text-gray-200">UI/UX Design</span>
+            <div className={`flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md border ${isDark ? 'bg-white/10 border-white/20' : 'bg-gray-100 border-gray-200'}`}>
+              <Palette className="w-5 h-5 text-blue-500" />
+              <span className={`text-sm sm:text-base ${isDark ? 'text-gray-200' : 'text-gray-700'}`}>UI/UX Design</span>
             </div>
           </div>
           <a 
@@ -35,10 +38,16 @@ export default function Hero() {
           </a>
         </div>
       </div>
-      {/* Modified background gradient with reduced opacity */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent z-10"></div>
-      {/* Dark overlay to ensure text visibility */}
-      <div className="absolute inset-0 bg-black/80 z-0"></div>
+      {/* Theme-aware background gradient */}
+      <div className={`absolute inset-0 ${
+        isDark 
+          ? 'bg-[radial-gradient(circle_at_bottom,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent'
+          : 'bg-[radial-gradient(circle_at_bottom,_var(--tw-gradient-stops))] from-blue-500/5 via-gray-100 to-white'
+      } z-10`}></div>
+      {/* Theme-aware overlay */}
+      <div className={`absolute inset-0 ${
+        isDark ? 'bg-black/80' : 'bg-white/40'
+      } z-0`}></div>
     </section>
   );
 }
