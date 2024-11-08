@@ -10,7 +10,7 @@ export default function About() {
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
             <img 
-              src = {Profilepic}
+              src={Profilepic}
               alt="Profile"
               className="relative rounded-lg shadow-2xl w-full transform group-hover:scale-[1.01] transition-transform duration-300"
             />
@@ -26,41 +26,42 @@ export default function About() {
               and building projects that solve real-world problems. I thrive in collaborative environments 
               and am always eager to take on new challenges.
             </p>
-            <div className="grid grid-cols-2 gap-6">
+            {/* Updated grid for better mobile responsiveness */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-primary/10 dark:bg-primary/20">
+                <div className="p-2 rounded-lg bg-primary/10 dark:bg-primary/20 shrink-0">
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
-                <div>
+                <div className="min-w-0"> {/* Added min-w-0 to allow text truncation */}
                   <h3 className="font-semibold dark:text-gray-200">Location</h3>
-                  <p className="text-gray-600 dark:text-gray-400">Mumbai, Maharashtra</p>
+                  <p className="text-gray-600 dark:text-gray-400 truncate">Mumbai, Maharashtra</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-primary/10 dark:bg-primary/20">
+                <div className="p-2 rounded-lg bg-primary/10 dark:bg-primary/20 shrink-0">
                   <GraduationCap className="w-5 h-5 text-primary" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h3 className="font-semibold dark:text-gray-200">Education</h3>
-                  <p className="text-gray-600 dark:text-gray-400">B.E. in  Electronics & CS </p>
+                  <p className="text-gray-600 dark:text-gray-400 truncate">B.E. in Electronics & CS</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-primary/10 dark:bg-primary/20">
+                <div className="p-2 rounded-lg bg-primary/10 dark:bg-primary/20 shrink-0">
                   <Mail className="w-5 h-5 text-primary" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h3 className="font-semibold dark:text-gray-200">Email</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">ecs.crce.10127@gmail.com</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm truncate">ecs.crce.10127@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="p-2 rounded-lg bg-primary/10 dark:bg-primary/20">
+                <div className="p-2 rounded-lg bg-primary/10 dark:bg-primary/20 shrink-0">
                   <Briefcase className="w-5 h-5 text-primary" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h3 className="font-semibold dark:text-gray-200">Role</h3>
-                  <p className="text-gray-600 dark:text-gray-400">Student</p>
+                  <p className="text-gray-600 dark:text-gray-400 truncate">Student</p>
                 </div>
               </div>
             </div>
