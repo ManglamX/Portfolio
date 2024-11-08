@@ -5,7 +5,7 @@ export default function Hero() {
     <section id="home" className="min-h-screen flex items-center justify-center relative">
       <div className="container mx-auto px-6 py-24 text-center relative z-20">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 gradient-text animate-fade-in relative z-20 leading-tight py-2" style={{ paddingBottom: '0.4qem' }}>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 gradient-text animate-fade-in relative z-20 leading-tight py-2" style={{ paddingBottom: '0.4em' }}>
             Manglam Jaiswal
           </h1>
           <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto mb-12 animate-fade-in-delay-2 relative z-20">
